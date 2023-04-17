@@ -40,7 +40,7 @@ oddArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu
 
 console.log(oddArray);
 
-image1.src = oddArray[4].src;
+image1.src = oddArray[5].src;
 console.log (image2);
 image2.src = oddArray[3].src;
 image3.src = oddArray[2].src;
