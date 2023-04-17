@@ -1,0 +1,42 @@
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 1000px;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  font-family:'Courier New', Courier, monospace
+}
+
+h1 {
+  font-weight: bolder;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+
+main {
+  width: 1024px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: row;
+}
+
+#resultsNav {
+  background-color: blanchedalmond;
+  height: 500px;
+  width: 250px;
+  margin-right: 20px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
