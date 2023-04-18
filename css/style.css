@@ -26,6 +26,12 @@ main {
   background-color: beige;
 }
 
+h2 {
+  text-align: center;
+  margin: 20px;
+  font-weight: bolder;
+}
+
 #resultsDiv {
   display: inline-block;
   vertical-align: top;
@@ -33,11 +39,15 @@ main {
   height: 500px;
   width: 250px;
   margin-right: 20px;
+  position: relative;
+  overflow-y: auto;
+  padding-bottom: 20px;
 }
 
 section {
   display: inline-block;
   vertical-align: top;
+  max-width: 700px;
 }
 
 p {
@@ -47,7 +57,7 @@ p {
 }
 
 div > img {
-  width: 450px;
+  width: 200px;
   height: 300px;
   align-items: stretch;
   border: 5px solid transparent;
@@ -61,4 +71,11 @@ div img:hover {
 
 ul {
   margin: 1rem;
+  list-style-type: disc;
+}
+
+button {
+  position: inherit;
+  bottom: 5px;
+  margin-left: 75px;
 }
