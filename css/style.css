@@ -55,7 +55,7 @@ div > img {
 }
 
 div img:hover {
-  border: 5px solid blue;
+  border: 5px solid rgb(125, 125, 245);
   cursor: pointer;
 }
 
