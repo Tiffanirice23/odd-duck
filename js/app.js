@@ -22,7 +22,7 @@ function Odd(name, fileExtension = 'jpg') {
   this.views = 0;
   this.votes = 0;
 }
-
+console.log('test 1');
 let bag = new Odd('bag');
 let banana = new Odd('banana');
 let bathroom = new Odd('bathroom');
