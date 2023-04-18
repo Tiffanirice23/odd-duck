@@ -92,10 +92,12 @@ function handleOddClick(event) {
 function viewResults() {
   let ul = document.querySelector('ul');
   for (let i = 0; i < oddArray.length; i++) {
-    let li = document.createElement('li');
-    li.textContent = `${oddArray[i].name} had ${oddArray[i].votes}
+    if (oddArray[i].votes > 0) {
+      let li = document.createElement('li');
+      li.textContent = `${oddArray[i].name} had ${oddArray[i].votes}
     votes and was seen ${oddArray[i].views} times.`;
-    ul.appendChild(li);
+      ul.appendChild(li);
+    }
   }
 }
 renderOdd();
