@@ -18,30 +18,30 @@ let maxCounter = 25;
 
 function Odd(name, fileExtension = 'jpg') {
   this.name = name;
-  this.src = `../img/${name}.${fileExtension}`;
+  this.src = `/img/${name}.${fileExtension}`;
   this.views = 0;
   this.votes = 0;
 }
 
-let bag = new Odd('Bag');
-let banana = new Odd('Banana');
-let bathroom = new Odd('Bathroom');
-let boots = new Odd('Boots');
-let breakfast = new Odd('Breakfast');
-let bubblegum = new Odd('Bubblegum');
-let chair = new Odd('Chair');
-let cthulhu = new Odd('Cthulhu');
-let dogDuck = new Odd('DogDuck');
-let dragon = new Odd('Dragon');
-let pen = new Odd('Pen');
-let petSweep = new Odd('PetSweep');
-let scissors = new Odd('Scissors');
-let shark = new Odd('Shark');
-let sweep = new Odd('Sweep', 'png');
-let tauntaun = new Odd('Tauntaun');
-let unicorn = new Odd('Unicorn');
-let waterCan = new Odd('WaterCan');
-let wineGlass = new Odd('WineGlass');
+let bag = new Odd('bag');
+let banana = new Odd('banana');
+let bathroom = new Odd('bathroom');
+let boots = new Odd('boots');
+let breakfast = new Odd('breakfast');
+let bubblegum = new Odd('bubblegum');
+let chair = new Odd('chair');
+let cthulhu = new Odd('cthulhu');
+let dogDuck = new Odd('dogDuck');
+let dragon = new Odd('dragon');
+let pen = new Odd('pen');
+let petSweep = new Odd('petSweep');
+let scissors = new Odd('scissors');
+let shark = new Odd('shark');
+let sweep = new Odd('sweep', 'png');
+let tauntaun = new Odd('tauntaun');
+let unicorn = new Odd('unicorn');
+let waterCan = new Odd('waterCan');
+let wineGlass = new Odd('wineGlass');
 
 oddArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass);
 
