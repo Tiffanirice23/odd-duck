@@ -18,7 +18,7 @@ let maxCounter = 25;
 
 function Odd(name, fileExtension = 'jpg') {
   this.name = name;
-  this.src = `/img/${name}.${fileExtension}`;
+  this.src = `img/${name}.${fileExtension}`;
   this.views = 0;
   this.votes = 0;
 }
