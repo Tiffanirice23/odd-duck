@@ -1,7 +1,10 @@
 'use strict';
 
 let oddArray = [];
-
+let getOddArray = localStorage.getItem('oddArray');
+if (getOddArray) {
+  oddArray = JSON.parse(getOddArray);
+}
 
 let myContainer = document.querySelector('#imgContainer');
 
@@ -96,7 +99,33 @@ function handleOddClick(event) {
     myContainer.removeEventListener('click', handleOddClick);
     renderChart();
   }
+
+  let stringifyOddArray = JSON.stringify(oddArray);
+  localStorage.setItem('oddArray', stringifyOddArray);
 }
+
+// function saveSettings() {
+//   console.log(counter);
+//   localStorage.setItem('counter', counter);
+//   let stringify = JSON.stringify(counter);
+//   console.log(stringify);
+
+//   localStorage.setItem('counter', stringify);
+// }
+
+// function pageLoad() {
+//   let saveSettings = localStorage.getItem('counter');
+//   if (saveSettings) {
+//     console.log(saveSettings);
+//     counter = JSON.parse(saveSettings);
+//     console.log(counter);
+//     if (counter.handleOddClick) {
+//       let handleOddClick ();
+
+//     }
+
+//     }
+//   }
 
 function viewResults() {
   let ul = document.querySelector('ul');
@@ -195,6 +224,8 @@ function renderChart() {
   new Chart(ctx, config);
 }
 
+// saveSettings();
+// pageLoad();
 renderOdd();
 
 myContainer.addEventListener('click', handleOddClick);
