@@ -6,24 +6,32 @@
 body {
   margin-left: 30px;
   margin-right: 30px;
- 
+  background-color: rgb(35, 25, 66)
 }
 header{
   display: flex;
   flex-direction: row;
-  margin: 20px;
-  font-family:'Courier New', Courier, monospace
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-family:'Courier New', Courier, monospace;
+  background-color: rgb(224, 177, 203);
+  border: 3px solid rgb(248, 249, 250)
 }
 
 h1 {
   font-weight: bolder;
-  margin-top: 18px;
+  margin-top: 30px;
   margin-left: 10px;
+  font-size: 30px;
 }
 
 main {
-  margin: 3rem auto;
-  background-color: beige;
+  background-color: rgb(224, 177, 203);
+  border: 3px solid rgb(248, 249, 250);
+  display: flex;
+  flex-direction: row;
+
 }
 
 h2 {
@@ -34,11 +42,13 @@ h2 {
 
 #resultsDiv {
   display: inline-block;
+  border: 3px solid rgb(248, 249, 250);
   vertical-align: top;
-  background-color: blanchedalmond;
+  background-color: rgb(206, 212, 218);
   height: 500px;
   width: 250px;
   margin-right: 20px;
+  margin: 15px;
   position: relative;
   overflow-y: auto;
   padding-bottom: 20px;
@@ -47,22 +57,40 @@ h2 {
 section {
   display: inline-block;
   vertical-align: top;
-  max-width: 700px;
+  width: 700px;
 }
 
 p {
-  max-width: 1325px;
-  margin-top: 50px;
-  font-size: 20px;
+  margin-top: 25px;
+  margin-left: 20px;
+  width: 1025px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(248, 249, 250);
+  padding: 10px;
+  height: fit-content;
+}
+
+header img {
+  margin: 15px;
 }
 
 div > img {
-  width: 200px;
+  min-width: 335px;
   height: 300px;
-  align-items: stretch;
-  border: 5px solid transparent;
-  margin-top: 10px;
+  margin-top: 80px;
+  /* padding: 15px; */
+  border: 2px solid rgb(125, 125, 245);
+  margin: 5px;
 }
+
+#imgContainer {
+  border: 5px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+  }
 
 div img:hover {
   border: 5px solid rgb(125, 125, 245);
@@ -75,7 +103,20 @@ ul {
 }
 
 button {
-  position: inherit;
+  position:absolute;
   bottom: 5px;
   margin-left: 75px;
+  
+}
+
+#myChart {
+  background-color: rgb(238, 248, 246);
+  color:black;
+}
+
+#myChartDiv {
+  border: 3px solid rgb(248, 249, 250);
+  color:black;
+  /* margin-left: 30px;
+  margin-right: 30px; */
 }

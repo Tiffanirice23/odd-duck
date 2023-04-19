@@ -25,27 +25,27 @@ function Odd(name, fileExtension = 'jpg') {
   this.votes = 0;
 }
 
-let bag = new Odd('bag');
-let banana = new Odd('banana');
-let bathroom = new Odd('bathroom');
-let boots = new Odd('boots');
-let breakfast = new Odd('breakfast');
-let bubblegum = new Odd('bubblegum');
-let chair = new Odd('chair');
-let cthulhu = new Odd('cthulhu');
-let dogDuck = new Odd('dogDuck');
-let dragon = new Odd('dragon');
-let pen = new Odd('pen');
-let petSweep = new Odd('petSweep');
-let scissors = new Odd('scissors');
-let shark = new Odd('shark');
-let sweep = new Odd('sweep', 'png');
-let tauntaun = new Odd('tauntaun');
-let unicorn = new Odd('unicorn');
-let waterCan = new Odd('waterCan');
-let wineGlass = new Odd('wineGlass');
+let Bag = new Odd('bag');
+let Banana = new Odd('banana');
+let Bathroom = new Odd('bathroom');
+let Boots = new Odd('boots');
+let Breakfast = new Odd('breakfast');
+let Bubblegum = new Odd('bubblegum');
+let Chair = new Odd('chair');
+let Cthulhu = new Odd('cthulhu');
+let DogDuck = new Odd('dogDuck');
+let Dragon = new Odd('dragon');
+let Pen = new Odd('pen');
+let PetSweep = new Odd('petSweep');
+let Scissors = new Odd('scissors');
+let Shark = new Odd('shark');
+let Sweep = new Odd('sweep', 'png');
+let Tauntaun = new Odd('tauntaun');
+let Unicorn = new Odd('unicorn');
+let WaterCan = new Odd('waterCan');
+let WineGlass = new Odd('wineGlass');
 
-oddArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass);
+oddArray.push(Bag, Banana, Bathroom, Boots, Breakfast, Bubblegum, Chair, Cthulhu, DogDuck, Dragon, Pen, PetSweep, Scissors, Shark, Sweep, Tauntaun, Unicorn, WaterCan, WineGlass);
 
 console.log(oddArray);
 
@@ -94,6 +94,7 @@ function handleOddClick(event) {
     renderOdd();
   } else {
     myContainer.removeEventListener('click', handleOddClick);
+    renderChart();
   }
 }
 
@@ -107,37 +108,94 @@ function viewResults() {
   }
 }
 
-renderOdd();
 
-console.log(oddArray);
+function renderChart() {
+  console.log(oddArray);
 
-const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [
-      {
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      },
-      {
-        label: '# of Views',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
+  let oddNames = [];
+  let oddVotes = [];
+  let oddViews = [];
+
+  for (let i = 0; i < oddArray.length; i++) {
+    console.log(oddArray[i]);
+
+    let name = oddArray[i].name;
+    oddNames.push(name);
+    oddVotes.push(oddArray[i].votes);
+    oddViews.push(oddArray[i].views);
+  }
+  console.log(oddNames);
+  console.log(oddVotes);
+  console.log(oddViews);
+
+  let config = {
+    type: 'bar',
+    data: {
+      labels: oddNames,
+      datasets: [
+        {
+          label: '# of Votes',
+          data: oddVotes,
+          borderColor: [
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)'
+          ],
+          borderWidth: 1,
+          backgroundColor: [
+            'rgb(190, 149, 196)',
+            'rgb(190, 149, 196)',
+            'rgb(190, 149, 196)',
+            'rgb(190, 149, 196)',
+            'rgb(190, 149, 196)',
+            'rgb(190, 149, 196)',
+            'rgb(190, 149, 196)'
+          ],
+        },
+        {
+          label: '# of Views',
+          data: oddViews,
+          borderColor: [
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)',
+            'rgb(35, 25, 66)'
+          ],
+          borderWidth: 1,
+          backgroundColor: [
+            'rgb(159, 134, 192)',
+            'rgb(159, 134, 192)',
+            'rgb(159, 134, 192)',
+            'rgb(159, 134, 192)',
+            'rgb(159, 134, 192)',
+            'rgb(159, 134, 192)',
+            'rgb(159, 134, 192)'
+          ],
+        }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
       }
     }
-  }
-});
+  };
+  // eslint-disable-next-line no-undef
+  new Chart(ctx, config);
+}
+
+renderOdd();
 
 myContainer.addEventListener('click', handleOddClick);
 viewResultsBtn.addEventListener('click', viewResults);
