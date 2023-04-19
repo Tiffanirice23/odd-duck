@@ -7,6 +7,7 @@
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
 
 ### Author: Tiffani Rice
+Dan Quinn for fi
 
 ### Links and Resources
 
@@ -14,6 +15,12 @@ I build an app with a direct and powerful purpose. It does all of the things tha
 * Any Links you used as reference
 
 ### Lighthouse Accessibility Report Score
+
+- Lab11
+![Lighthouselab11](img/lab11-lighthouse.png)
+
+- Lab12
+![Lighthouselab12](img/lab12-lighthouse.png)
 
 * Provide a screenshot of your score after running a Lighthouse Accessibility report.
 
