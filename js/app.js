@@ -17,8 +17,14 @@ let image3 = document.querySelector('#imgContainer img:nth-child(3)');
 let viewResultsBtn = document.querySelector('#resultsDiv button');
 
 let counter = 0;
+let getCounter = localStorage.getItem('counter');
+if (getCounter) {
+  counter = parseInt(getCounter);
+}
 let maxCounter = 25;
 let indexArray = [];
+
+let myChart;
 
 
 function Odd(name, fileExtension = 'jpg') {
@@ -28,32 +34,37 @@ function Odd(name, fileExtension = 'jpg') {
   this.votes = 0;
 }
 
-let Bag = new Odd('bag');
-let Banana = new Odd('banana');
-let Bathroom = new Odd('bathroom');
-let Boots = new Odd('boots');
-let Breakfast = new Odd('breakfast');
-let Bubblegum = new Odd('bubblegum');
-let Chair = new Odd('chair');
-let Cthulhu = new Odd('cthulhu');
-let DogDuck = new Odd('dogDuck');
-let Dragon = new Odd('dragon');
-let Pen = new Odd('pen');
-let PetSweep = new Odd('petSweep');
-let Scissors = new Odd('scissors');
-let Shark = new Odd('shark');
-let Sweep = new Odd('sweep', 'png');
-let Tauntaun = new Odd('tauntaun');
-let Unicorn = new Odd('unicorn');
-let WaterCan = new Odd('waterCan');
-let WineGlass = new Odd('wineGlass');
+function createOddArray() {
 
-oddArray.push(Bag, Banana, Bathroom, Boots, Breakfast, Bubblegum, Chair, Cthulhu, DogDuck, Dragon, Pen, PetSweep, Scissors, Shark, Sweep, Tauntaun, Unicorn, WaterCan, WineGlass);
+  let Bag = new Odd('bag');
+  let Banana = new Odd('banana');
+  let Bathroom = new Odd('bathroom');
+  let Boots = new Odd('boots');
+  let Breakfast = new Odd('breakfast');
+  let Bubblegum = new Odd('bubblegum');
+  let Chair = new Odd('chair');
+  let Cthulhu = new Odd('cthulhu');
+  let DogDuck = new Odd('dogDuck');
+  let Dragon = new Odd('dragon');
+  let Pen = new Odd('pen');
+  let PetSweep = new Odd('petSweep');
+  let Scissors = new Odd('scissors');
+  let Shark = new Odd('shark');
+  let Sweep = new Odd('sweep', 'png');
+  let Tauntaun = new Odd('tauntaun');
+  let Unicorn = new Odd('unicorn');
+  let WaterCan = new Odd('waterCan');
+  let WineGlass = new Odd('wineGlass');
 
-console.log(oddArray);
+  oddArray.push(Bag, Banana, Bathroom, Boots, Breakfast, Bubblegum, Chair, Cthulhu, DogDuck, Dragon, Pen, PetSweep, Scissors, Shark, Sweep, Tauntaun, Unicorn, WaterCan, WineGlass);
+}
 
 function selectRandomOddNumber() {
-  return Math.floor(Math.random() * oddArray.length);
+  let randomNum;
+  do {
+    randomNum = Math.floor(Math.random() * oddArray.length);
+  } while (indexArray.includes(randomNum));
+  return randomNum;
 }
 
 function renderOdd() {
@@ -69,7 +80,6 @@ function renderOdd() {
   let odd2 = indexArray.shift();
   let odd3 = indexArray.shift();
 
-  console.log(indexArray);
 
   image1.src = oddArray[odd1].src;
   image1.alt = oddArray[odd1].name;
@@ -83,49 +93,38 @@ function renderOdd() {
 }
 
 function handleOddClick(event) {
+  if (counter === 0 && myChart) {
+    myChart.destroy();
+  }
   counter++;
-  console.log(event.target.alt);
   let clickedOdd = event.target.alt;
   for (let i = 0; i < oddArray.length; i++) {
     if (clickedOdd === oddArray[i].name) {
       oddArray[i].votes++;
-      console.log(oddArray);
     }
   }
 
   if (counter < maxCounter) {
     renderOdd();
-  } else {
-    myContainer.removeEventListener('click', handleOddClick);
+  } else if (counter === maxCounter) {
     renderChart();
+    reset();
   }
 
   let stringifyOddArray = JSON.stringify(oddArray);
   localStorage.setItem('oddArray', stringifyOddArray);
+
+  let stringifyCounter = counter.toString();
+  localStorage.setItem('counter', stringifyCounter);
 }
 
-// function saveSettings() {
-//   console.log(counter);
-//   localStorage.setItem('counter', counter);
-//   let stringify = JSON.stringify(counter);
-//   console.log(stringify);
-
-//   localStorage.setItem('counter', stringify);
-// }
-
-// function pageLoad() {
-//   let saveSettings = localStorage.getItem('counter');
-//   if (saveSettings) {
-//     console.log(saveSettings);
-//     counter = JSON.parse(saveSettings);
-//     console.log(counter);
-//     if (counter.handleOddClick) {
-//       let handleOddClick ();
-
-//     }
-
-//     }
-//   }
+function reset() {
+  counter = 0;
+  indexArray = [];
+  oddArray = [];
+  createOddArray();
+  localStorage.setItem('oddArray', []);
+}
 
 function viewResults() {
   let ul = document.querySelector('ul');
@@ -133,31 +132,23 @@ function viewResults() {
     let li = document.createElement('li');
     li.textContent = `${oddArray[i].name} had ${oddArray[i].views} views, and ${oddArray[i].votes} votes.`;
     ul.appendChild(li);
-
   }
+
 }
 
 
 function renderChart() {
-  console.log(oddArray);
-
   const ctx = document.getElementById('myChart');
-
   let oddNames = [];
   let oddVotes = [];
   let oddViews = [];
 
   for (let i = 0; i < oddArray.length; i++) {
-    console.log(oddArray[i]);
-
     let name = oddArray[i].name;
     oddNames.push(name);
     oddVotes.push(oddArray[i].votes);
     oddViews.push(oddArray[i].views);
   }
-  console.log(oddNames);
-  console.log(oddVotes);
-  console.log(oddViews);
 
   let config = {
     type: 'bar',
@@ -201,13 +192,13 @@ function renderChart() {
           ],
           borderWidth: 1,
           backgroundColor: [
-            'rgb(159, 134, 192)',
-            'rgb(159, 134, 192)',
-            'rgb(159, 134, 192)',
-            'rgb(159, 134, 192)',
-            'rgb(159, 134, 192)',
-            'rgb(159, 134, 192)',
-            'rgb(159, 134, 192)'
+            'rgb(25, 42, 81)',
+            'rgb(25, 42, 81)',
+            'rgb(25, 42, 81)',
+            'rgb(25, 42, 81)',
+            'rgb(25, 42, 81)',
+            'rgb(25, 42, 81)',
+            'rgb(25, 42, 81)'
           ],
         }
       ]
@@ -221,12 +212,15 @@ function renderChart() {
     }
   };
   // eslint-disable-next-line no-undef
-  new Chart(ctx, config);
+  myChart = new Chart(ctx, config);
 }
 
 // saveSettings();
 // pageLoad();
+if (oddArray.length === 0) {
+  createOddArray();
+}
 renderOdd();
 
-myContainer.addEventListener('click', handleOddClick);
 viewResultsBtn.addEventListener('click', viewResults);
+myContainer.addEventListener('click', handleOddClick);
