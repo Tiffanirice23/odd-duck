@@ -1,6 +1,5 @@
-
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 body {
@@ -8,24 +7,32 @@ body {
   margin-right: 30px;
   background-color: rgb(35, 25, 66);
 }
-header{
+
+header {
   display: flex;
   flex-direction: row;
   margin-top: 15px;
   margin-bottom: 15px;
   width: 100%;
-  font-family:'Courier New', Courier, monospace;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: #b392ac;
   border: 3px solid rgb(248, 249, 250);
-  
+
+
 }
 
 h1 {
   font-weight: bolder;
-  margin-top: 30px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 350px;
+  padding: 20px;
+  margin-bottom: 5px;
   font-size: 30px;
   text-align: center;
+  color: #100202;
+  background-color: rgb(35, 25, 66);
+  color: #edcef6;
+  border-radius: 5%;
 }
 
 main {
@@ -55,6 +62,7 @@ h2 {
   overflow-y: auto;
   padding-bottom: 20px;
 }
+
 #resultsDiv:hover {
   background-color: #e69e5a;
 }
@@ -63,18 +71,20 @@ h2 {
 section {
   display: inline-block;
   vertical-align: top;
-  width:800px;
+  width: 800px;
 }
 
 p {
   margin-top: 25px;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 15px;
   border: 1px solid rgb(248, 249, 250);
-  padding: 10px;
+  padding: 15px;
   height: fit-content;
-  margin-left: 70px;}
+  margin-left: 70px;
+  z-index: 30%;
+}
 
 header img {
   margin: 15px;
@@ -84,36 +94,45 @@ div > img {
   width: 33%;
   height: 300px;
   margin-top: 80px;
-  /* padding: 15px; */
-  border: 5px solid transparent #e69e5a;
+  padding: 15px;
+  border: 5px solid transparent rgb(35, 25, 66);;
   margin: 5px;
-  margin-left: 50px
 }
 
 #imgContainer {
-  border: 5px solid transparent #e69e5a;
+  border: 5px solid  rgb(35, 25, 66);
+  margin: 50px;
+  width: 1000px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  -webkit-box-shadow: 0px 0px 25px 42px rgba(78,15,124,0.85); 
+  box-shadow: 0px 0px 25px 42px rgba(78,15,124,0.85);
   /* margin: 5px; */
-  }
+}
 
 div img:hover {
   border: 5px solid #e69e5a;
   cursor: crosshair;
 }
 
+section > p {
+  background-color: rgb(97, 55, 148);
+  color:#edcef6;
+  width: 850px;
+  margin-left: 100px;
+}
 ul {
-  margin: 1rem;
-  list-style-type: disc;
+padding:10px;
+list-style-type: circle;
+margin: 10px;
 }
 
 button {
-  position:absolute;
-  bottom: 5px;
-  margin-left: 75px;
-  
+  position:fixed;
+  bottom:0;
+  left: 105px;  
+  margin-bottom: 90px;
 }
 
 #myChart {
@@ -124,7 +143,7 @@ button {
 
 #myChartDiv {
   border: 3px solid rgb(248, 249, 250);
-  color:black;
+  color: black;
   width: 100%;
   margin-bottom: 30px;
 }
@@ -132,4 +151,5 @@ button {
 #siteLogo {
   width: 160px;
   height: 50px;
+  border-radius: 30%;
 }

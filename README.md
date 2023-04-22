@@ -30,7 +30,6 @@ Dan Quinn for JS issues
 
 * Provide a screenshot of your score after running a Lighthouse Accessibility report.
 
-### Reflections and Comments
+### Overview of the Odd Duck project
 
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+This application allows users to view a selection of 3 odd product images, and vote on their favorite of the three. Local storage ensures that their answers are saved, and refresshing the broswer will not lose the data. The user is able to click a "view results" button at any point to see their votes/ views! After 25 clicks, a graph will appear that shows a final tally.
