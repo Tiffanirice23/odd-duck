@@ -3,31 +3,24 @@
 }
 
 body {
-  margin-left: 30px;
-  margin-right: 30px;
-  background-color: rgb(35, 25, 66);
+  background-color: rgb(179, 158, 241);
 }
 
 header {
-  display: flex;
-  flex-direction: row;
   margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100%;
+  margin-left: 40%;
+  margin-right: 20%;
+
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: #b392ac;
-  border: 3px solid rgb(248, 249, 250);
 }
+
 
 h1 {
   font-weight: bolder;
-  margin-top: 5px;
-  margin-left: 37%;
   padding: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-size: 30px;
   text-align: center;
-  color: #100202;
   background-color: rgb(35, 25, 66);
   color: #edcef6;
   border-radius: 5%;
@@ -38,7 +31,6 @@ main {
   border: 3px solid rgb(248, 249, 250);
   display: flex;
   flex-direction: row;
-
 }
 
 h2 {
@@ -64,7 +56,7 @@ h2 {
 section {
   display: inline-block;
   vertical-align: top;
-  width: 800px;
+  width: 80%;
 }
 
 p {
@@ -139,10 +131,4 @@ button {
   color: black;
   width: 100%;
   margin-bottom: 30px;
-}
-
-#siteLogo {
-  width: 160px;
-  height: 50px;
-  border-radius: 30%;
 }
