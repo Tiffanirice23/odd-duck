@@ -17,14 +17,12 @@ header {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: #b392ac;
   border: 3px solid rgb(248, 249, 250);
-
-
 }
 
 h1 {
   font-weight: bolder;
   margin-top: 5px;
-  margin-left: 350px;
+  margin-left: 37%;
   padding: 20px;
   margin-bottom: 5px;
   font-size: 30px;
@@ -53,7 +51,7 @@ h2 {
   display: inline-block;
   border: 3px solid rgb(248, 249, 250);
   vertical-align: top;
-  background-color: rgb(206, 212, 218);
+  background-color: rgb(221, 220, 219);
   height: 500px;
   width: 250px;
   margin-right: 20px;
@@ -62,11 +60,6 @@ h2 {
   overflow-y: auto;
   padding-bottom: 20px;
 }
-
-#resultsDiv:hover {
-  background-color: #e69e5a;
-}
-
 
 section {
   display: inline-block;
@@ -106,19 +99,19 @@ div > img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  -webkit-box-shadow: 0px 0px 25px 42px rgba(78,15,124,0.85); 
-  box-shadow: 0px 0px 25px 42px rgba(78,15,124,0.85);
+  -webkit-box-shadow: 0px 0px 25px 35px rgba(78,15,124,0.85); 
+  box-shadow: 0px 0px 20px 25px rgba(78,15,124,0.85);
   /* margin: 5px; */
 }
 
 div img:hover {
-  border: 5px solid #e69e5a;
+  border: 5px solid rgb(35, 25, 66);
   cursor: crosshair;
 }
 
 section > p {
-  background-color: rgb(97, 55, 148);
-  color:#edcef6;
+  background-color: rgb(221, 220, 219);
+
   width: 850px;
   margin-left: 100px;
 }
