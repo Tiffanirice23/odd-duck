@@ -38,24 +38,24 @@ function Odd(name, fileName = '', fileExtension = 'jpg') {
 
 function createOddArray() {
 
-  let Bag = new Odd('Star Wars Bag', 'bag');
+  let Sweep = new Odd('Baby Sweep Onesie' , 'sweep', 'png');
   let Banana = new Odd('Banana Slicer', 'banana');
-  let Bathroom = new Odd('Toilet Roll Holder', 'bathroom');
-  let Boots = new Odd('Rain Boots', 'boots');
   let Breakfast = new Odd('Breakfast Deluxe', 'breakfast');
-  let Bubblegum = new Odd('Meatball Bubblegum','bubblegum');
-  let Chair = new Odd('Uncomfortable Chair','chair');
   let Cthulhu = new Odd('Cthulhu Monster','cthulhu');
   let DogDuck = new Odd('Duck Lips for Dog','dogDuck');
   let Dragon = new Odd('Dragon Meat','dragon');
   let Pen = new Odd('Fork Pen','pen');
+  let Bubblegum = new Odd('Meatball Bubblegum','bubblegum');
   let PetSweep = new Odd('Pet Sweep Shoes' , 'petSweep');
   let Scissors = new Odd('Pizza Scissors' , 'scissors');
+  let Boots = new Odd('Classic Rain Boots', 'boots');
+  let WaterCan = new Odd('Self-Watering Watering Can' , 'waterCan');
+  let Bag = new Odd('Star Wars Luggage', 'bag');
   let Shark = new Odd('Shark Attack Prank' , 'shark');
-  let Sweep = new Odd('Baby Sweep Onesie' , 'sweep', 'png');
+  let Bathroom = new Odd('Toilet Roll Holder', 'bathroom');
   let Tauntaun = new Odd('Tauntaun Blanket' , 'tauntaun');
   let Unicorn = new Odd('Unicorn Meat' , 'unicorn');
-  let WaterCan = new Odd('Self-Watering Watering Can' , 'waterCan');
+  let Chair = new Odd('Statement Chair','chair');
   let WineGlass = new Odd('Unique Wine Glass' , 'wineGlass');
 
   oddArray.push(Bag, Banana, Bathroom, Boots, Breakfast, Bubblegum, Chair, Cthulhu, DogDuck, Dragon, Pen, PetSweep, Scissors, Shark, Sweep, Tauntaun, Unicorn, WaterCan, WineGlass);
