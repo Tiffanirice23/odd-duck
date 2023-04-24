@@ -14,7 +14,7 @@ header {
   margin-right: 15%; */
   display: flex;
   flex-direction: row;
-justify-content: center;
+  justify-content: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -25,7 +25,7 @@ h1 {
   /* margin-bottom: 15px;
   font-size: 30px;  */
   text-align: center;
-  background-color: rgb(35, 25, 66);
+  /* background-color: rgb(221, 220, 219); */
   color: #edcef6;
   border: 3px solid rgb(248, 249, 250);
   height:80px;
@@ -34,6 +34,13 @@ h1 {
   font-size:30px;
 }
 
+h1:hover {
+  color: darkgoldenrod;
+}
+
+a {
+  color: rgb(255, 237, 150);
+}
 main {
   background-color: #b392ac;
   border: 3px solid rgb(248, 249, 250);
@@ -84,12 +91,11 @@ header img {
 }
 
 div > img {
-  width: 33%;
+  width: 30%;
   height: 300px;
-  margin-top: 80px;
   padding: 15px;
-  border: 5px solid transparent rgb(35, 25, 66);;
-  margin: 5px;
+  border: 5px solid transparent rgb(35, 25, 66);
+  margin: 15px;
 }
 
 #imgContainer {
@@ -100,7 +106,7 @@ div > img {
   flex-direction: row;
   align-items: center;
   -webkit-box-shadow: 0px 0px 25px 35px rgba(78,15,124,0.85); 
-  box-shadow: 0px 0px 20px 25px rgba(35, 1, 127, 0.85);
+  box-shadow: 0px 0px 20px 25px rgba(255, 237, 150, 0.85);
   /* margin: 5px; */
 }
 
@@ -149,11 +155,12 @@ button {
 #viewResultsBtn {
   margin-left: 150px;
   border: 5px double #40177F;
-  
+  margin-right:20px;
 }
 
 #resetBtn {
   border: 5px double #40177F;
+  margin-left:20px;
 }
 
 h6 {
@@ -164,11 +171,13 @@ h6 {
 }
 
 #resetBtn:hover {
-  background-color: rgb(9, 145, 179);
+  -webkit-box-shadow: 0px 0px 25px 35px rgba(78,15,124,0.85); 
+  box-shadow: 0px 0px 20px 25px rgba(255, 237, 150, 0.85);
 }
 
 #viewResultsBtn:hover {
-  background-color:  rgb(9, 145, 179);
+  -webkit-box-shadow: 0px 0px 25px 35px rgba(78,15,124,0.85); 
+  box-shadow: 0px 0px 20px 25px rgba(255, 237, 150, 0.85);
 }
 
 #siteLogo {
