@@ -115,10 +115,10 @@ margin: 10px;
 }
 
 button {
-  position:fixed;
-  bottom:0;
+  position: absolute;
+  /* bottom:0;
   left: 105px;  
-  margin-bottom: 90px;
+  margin-bottom: 90px; */
 }
 
 #myChart {
@@ -132,4 +132,13 @@ button {
   height: 50%;
   width: 100%;
   margin-bottom: 30px;
+}
+
+#btnContainer {
+  position: relative;
+  align-items: center;
+}
+
+#viewResultsBtn {
+  margin-left: 150px;
 }
