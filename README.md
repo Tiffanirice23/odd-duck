@@ -20,6 +20,8 @@ Dan Quinn for JS issues
 
 ![Lighthouselab11](img/lab11-lighthouse.png)
 
+* Provide a screenshot of your score after running a Lighthouse Accessibility report.
+
 - Lab12
 
 ![Lighthouselab12](img/lab12-lighthouse.png)
@@ -28,7 +30,9 @@ Dan Quinn for JS issues
 
 ![Lighthouselab13](img/lab13-lighthouse.png)
 
-* Provide a screenshot of your score after running a Lighthouse Accessibility report.
+- Lab15b
+
+![Lighthouselab15](img/lab15-lighthouse.png)
 
 ### Overview of the Odd Duck project
 
