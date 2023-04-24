@@ -15,6 +15,7 @@ let image2 = document.querySelector('#imgContainer img:nth-child(2)');
 let image3 = document.querySelector('#imgContainer img:nth-child(3)');
 
 let viewResultsBtn = document.querySelector('#resultsDiv button');
+let resetBtn = document.querySelector('#resetBtn');
 
 let counter = 0;
 let getCounter = localStorage.getItem('counter');
@@ -108,7 +109,6 @@ function handleOddClick(event) {
     renderOdd();
   } else if (counter === maxCounter) {
     renderChart();
-    reset();
   }
 
   let stringifyOddArray = JSON.stringify(oddArray);
@@ -119,15 +119,18 @@ function handleOddClick(event) {
 }
 
 function reset() {
+  console.log('reset');
   counter = 0;
   indexArray = [];
   oddArray = [];
   createOddArray();
   localStorage.setItem('oddArray', []);
+  myChart.destroy();
 }
 
 function viewResults() {
   let ul = document.querySelector('ul');
+  ul.innerHTML = '';
   for (let i = 0; i < oddArray.length; i++) {
     let li = document.createElement('li');
     li.textContent = `${oddArray[i].name} had ${oddArray[i].views} views, and ${oddArray[i].votes} votes.`;
@@ -221,6 +224,8 @@ if (oddArray.length === 0) {
   createOddArray();
 }
 renderOdd();
+
+resetBtn.addEventListener('click', reset);
 
 viewResultsBtn.addEventListener('click', viewResults);
 myContainer.addEventListener('click', handleOddClick);
