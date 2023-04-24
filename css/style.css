@@ -26,7 +26,7 @@ h1 {
   font-size: 30px;  */
   text-align: center;
   /* background-color: rgb(221, 220, 219); */
-  color: #edcef6;
+   color: rgb(255, 237, 150);
   border: 3px solid rgb(248, 249, 250);
   height:80px;
   border-radius: 5%;
@@ -38,9 +38,6 @@ h1:hover {
   color: darkgoldenrod;
 }
 
-a {
-  color: rgb(255, 237, 150);
-}
 main {
   background-color: #b392ac;
   border: 3px solid rgb(248, 249, 250);
